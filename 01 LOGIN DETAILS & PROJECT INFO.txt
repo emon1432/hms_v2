@@ -1,0 +1,16 @@
+
+=> Unzip the download file.
+=> Move this folder to xampp/htdocs
+=> Create a database localhost/phpmyadmin named "hms2"
+=> import sql file unde Database File folder
+=> then type localhost/hms2
+
+
+**Admin Login Details**
+
+Username: admin
+Password: Password@123
+
+Got it Priyanka?
+
+

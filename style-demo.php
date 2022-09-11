@@ -44,8 +44,8 @@ include("header.php");
   </div>
 </div>
 
-    <div class="clear"></div>
-  </div>
+<div class="clear"></div>
+</div>
 </div>
 <?php
 include("footer.php");

@@ -1,25 +1,23 @@
-
 <?php
 
 include("adheader.php");
 include 'dbconnection.php';
 
-if(!isset($_SESSION[doctorid]))
-{
-	echo "<script>window.location='doctorlogin.php';</script>";
+if (!isset($_SESSION['doctorid'])) {
+  echo "<script>window.location='doctorlogin.php';</script>";
 }
 
 ?>
 <div class="container-fluid">
   <div class="block-header">
-    <h2>Welcome <?php  $sql="SELECT * FROM `doctor` WHERE doctorid='$_SESSION[doctorid]' ";
-    $doctortable = mysqli_query($con,$sql);
-    $doc = mysqli_fetch_array($doctortable);
+    <h2>Welcome <?php $sql = "SELECT * FROM `doctor` WHERE doctorid='$_SESSION[doctorid]' ";
+                $doctortable = mysqli_query($con, $sql);
+                $doc = mysqli_fetch_array($doctortable);
 
-    echo 'Dr. '. $doc[doctorname]; ?>
+                echo 'Dr. ' . $doc['doctorname']; ?>
 
-  </h2>
-</div>
+    </h2>
+  </div>
 </div>
 
 
@@ -35,10 +33,10 @@ if(!isset($_SESSION[doctorid]))
           <div class="content">
             <div class="text">New Appoiment</div>
             <div class="number"><?php
-            $sql = "SELECT * FROM appointment WHERE `doctorid`= '$_SESSION[doctorid]' AND appointmentdate=' ".date("Y-m-d")."'";
-            $qsql = mysqli_query($con,$sql);
-            echo mysqli_num_rows($qsql);
-            ?></div>
+                                $sql = "SELECT * FROM appointment WHERE `doctorid`= '$_SESSION[doctorid]' AND appointmentdate=' " . date("Y-m-d") . "'";
+                                $qsql = mysqli_query($con, $sql);
+                                echo mysqli_num_rows($qsql);
+                                ?></div>
           </div>
         </div>
       </div>
@@ -48,10 +46,10 @@ if(!isset($_SESSION[doctorid]))
           <div class="content">
             <div class="text">Number of Patient</div>
             <div class="number"><?php
-            $sql = "SELECT * FROM patient WHERE status='Active'";
-            $qsql = mysqli_query($con,$sql);
-            echo mysqli_num_rows($qsql);
-            ?></div>
+                                $sql = "SELECT * FROM patient WHERE status='Active'";
+                                $qsql = mysqli_query($con, $sql);
+                                echo mysqli_num_rows($qsql);
+                                ?></div>
           </div>
         </div>
       </div>
@@ -62,10 +60,10 @@ if(!isset($_SESSION[doctorid]))
             <div class="text">Today's Appointment</div>
             <div class="number">
               <?php
-              $sql = "SELECT * FROM appointment WHERE status='Approved' AND `doctorid`= '$_SESSION[doctorid]' AND appointmentdate=' ".date("Y-m-d")."'" ;
-            $qsql = mysqli_query($con,$sql);
-            echo mysqli_num_rows($qsql);
-            ?>
+              $sql = "SELECT * FROM appointment WHERE status='Approved' AND `doctorid`= '$_SESSION[doctorid]' AND appointmentdate=' " . date("Y-m-d") . "'";
+              $qsql = mysqli_query($con, $sql);
+              echo mysqli_num_rows($qsql);
+              ?>
             </div>
           </div>
         </div>
@@ -75,14 +73,13 @@ if(!isset($_SESSION[doctorid]))
           <div class="icon"> <i class="zmdi zmdi-money col-green"></i> </div>
           <div class="content">
             <div class="text">Total Earnings</div>
-            <div class="number">$ 
-              <?php 
-              $sql = "SELECT sum(bill_amount) as total  FROM `billing_records` WHERE `bill_type` = 'Consultancy Charge'" ;
-              $qsql = mysqli_query($con,$sql);
-              while ($row = mysqli_fetch_assoc($qsql))
-              { 
-               echo $row['total'];
-             }
+            <div class="number">$
+              <?php
+              $sql = "SELECT sum(bill_amount) as total  FROM `billing_records` WHERE `bill_type` = 'Consultancy Charge'";
+              $qsql = mysqli_query($con, $sql);
+              while ($row = mysqli_fetch_assoc($qsql)) {
+                echo $row['total'];
+              }
               ?>
 
             </div>

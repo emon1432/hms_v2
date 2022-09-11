@@ -1,14 +1,12 @@
 <?php
 include("adformheader.php");
 include("dbconnection.php");
-if(isset($_GET[delid]))
-{
-	$sql ="DELETE FROM medicine WHERE medicineid='$_GET[delid]'";
-	$qsql=mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
-		echo "<script>alert('Medicine redcord deleted successfully..');</script>";
-	}
+if (isset($_GET['delid'])) {
+  $sql = "DELETE FROM medicine WHERE medicineid='$_GET[delid]'";
+  $qsql = mysqli_query($con, $sql);
+  if (mysqli_affected_rows($con) == 1) {
+    echo "<script>alert('Medicine redcord deleted successfully..');</script>";
+  }
 }
 ?>
 <div class="container-fluid">
@@ -22,23 +20,22 @@ if(isset($_GET[delid]))
   <section class="container">
     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
 
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Cost</th>
-              <th>description</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead> 
-          <tbody>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Cost</th>
+          <th>description</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
 
-            <?php
-            $sql ="SELECT * FROM medicine";
-            $qsql = mysqli_query($con,$sql);
-            while($rs = mysqli_fetch_array($qsql))
-            {
-              echo "<tr>
+        <?php
+        $sql = "SELECT * FROM medicine";
+        $qsql = mysqli_query($con, $sql);
+        while ($rs = mysqli_fetch_array($qsql)) {
+          echo "<tr>
               <td>&nbsp;$rs[medicinename]</td>
               <td>&nbsp;$$rs[medicinecost]</td>
               <td>&nbsp;$rs[description]</td>
@@ -47,14 +44,14 @@ if(isset($_GET[delid]))
               <a href='medicine.php?editid=$rs[medicineid]' class='btn btn-raised bg-green'>Edit</a> 
               <a href='viewmedicine.php?delid=$rs[medicineid]' class='btn btn-raised bg-blush'>Delete</a></td>
               </tr>";
-            }
-            ?>
-          </tbody>
-        </table>
-      </section>
-     
-    </div>
-  </div>
+        }
+        ?>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+</div>
 </div>
 
 </div>

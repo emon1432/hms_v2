@@ -1,12 +1,10 @@
 <?php
 include("adformheader.php");
 include("dbconnection.php");
-if(isset($_GET[delid]))
-{
-	$sql ="DELETE FROM doctor WHERE doctorid='$_GET[delid]'";
-	$qsql=mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
+if (isset($_GET['delid'])) {
+	$sql = "DELETE FROM doctor WHERE doctorid='$_GET[delid]'";
+	$qsql = mysqli_query($con, $sql);
+	if (mysqli_affected_rows($con) == 1) {
 		echo "<script>alert('doctor record deleted successfully..');</script>";
 	}
 }
@@ -17,35 +15,34 @@ if(isset($_GET[delid]))
 
 	</div>
 
-<div class="card">
+	<div class="card">
 
-	<section class="container">
-		<table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-			<thead>
-				<tr>
-					<td>Name</td>
-					<td>Contact</td>
-					<td>Department</td>
-					<td>LoginID</td>
-					<td>Consultancy Charge</td>
-					<td>Education</td>
-					<td>Experience</td>
-					<td>Status</td>
-					<td>Action</td>
-				</tr>
-			</thead>
-			<tbody>
-				
-				<?php
-				$sql ="SELECT * FROM doctor";
-				$qsql = mysqli_query($con,$sql);
-				while($rs = mysqli_fetch_array($qsql))
-				{
+		<section class="container">
+			<table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Contact</td>
+						<td>Department</td>
+						<td>LoginID</td>
+						<td>Consultancy Charge</td>
+						<td>Education</td>
+						<td>Experience</td>
+						<td>Status</td>
+						<td>Action</td>
+					</tr>
+				</thead>
+				<tbody>
 
-					$sqldept = "SELECT * FROM department WHERE departmentid='$rs[departmentid]'";
-					$qsqldept = mysqli_query($con,$sqldept);
-					$rsdept = mysqli_fetch_array($qsqldept);
-					echo "<tr>
+					<?php
+					$sql = "SELECT * FROM doctor";
+					$qsql = mysqli_query($con, $sql);
+					while ($rs = mysqli_fetch_array($qsql)) {
+
+						$sqldept = "SELECT * FROM department WHERE departmentid='$rs[departmentid]'";
+						$qsqldept = mysqli_query($con, $sqldept);
+						$rsdept = mysqli_fetch_array($qsqldept);
+						echo "<tr>
 					<td>&nbsp;$rs[doctorname]</td>
 					<td>&nbsp;$rs[mobileno]</td>
 					<td>&nbsp;$rsdept[departmentname]</td>
@@ -57,12 +54,12 @@ if(isset($_GET[delid]))
 					<td>&nbsp;
 					<a href='doctor.php?editid=$rs[doctorid]' class='btn btn-sm btn-raised g-bg-cyan'>Edit</a> <a href='viewdoctor.php?delid=$rs[doctorid]' class='btn btn-sm btn-raised g-bg-blush2'>Delete</a> </td>
 					</tr>";
-				}
-				?>      </tbody>
+					}
+					?> </tbody>
 			</table>
 		</section>
 	</div>
 </div>
-	<?php
-	include("adformfooter.php");
-	?>
+<?php
+include("adformfooter.php");
+?>

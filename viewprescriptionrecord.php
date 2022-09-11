@@ -1,21 +1,20 @@
 <?php
 include("header.php");
 include("dbconnection.php");
-if(isset($_GET[delid]))
-{
-	$sql ="DELETE FROM prescription_records WHERE prescription_record_id='$_GET[delid]'";
-	$qsql=mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
-		echo "<script>alert('prescription record deleted successfully..');</script>";
-	}
+if (isset($_GET['delid'])) {
+  $sql = "DELETE FROM prescription_records WHERE prescription_record_id='$_GET[delid]'";
+  $qsql = mysqli_query($con, $sql);
+  if (mysqli_affected_rows($con) == 1) {
+    echo "<script>alert('prescription record deleted successfully..');</script>";
+  }
 }
 ?>
 
 <div class="wrapper col2">
   <div id="breadcrumb">
     <ul>
-      <li class="first">View Prescription Record</li></ul>
+      <li class="first">View Prescription Record</li>
+    </ul>
   </div>
 </div>
 <div class="wrapper col4">
@@ -31,12 +30,11 @@ if(isset($_GET[delid]))
           <td>Status</td>
           <td>Action</td>
         </tr>
-         <?php
-		$sql ="SELECT * FROM prescription_records";
-		$qsql = mysqli_query($con,$sql);
-		while($rs = mysqli_fetch_array($qsql))
-		{
-        echo "<tr>
+        <?php
+        $sql = "SELECT * FROM prescription_records";
+        $qsql = mysqli_query($con, $sql);
+        while ($rs = mysqli_fetch_array($qsql)) {
+          echo "<tr>
           <td>&nbsp;$rs[medicine_name]</td>
           <td>&nbsp;$rs[cost]</td>
 		   <td>&nbsp;$rs[unit]</td>
@@ -44,16 +42,16 @@ if(isset($_GET[delid]))
 			 <td>&nbsp;$rs[status]</td>
 			  <td>&nbsp;<a href='prescriptionrecord.php?editid=$rs[prescription_record_id]'>Edit</a>  | <a href='viewprescriptionrecord.php?delid=$rs[prescription_record_id]'>Delete</a> </td>
         </tr>";
-		}
-		?>
+        }
+        ?>
       </tbody>
     </table>
     <p>&nbsp;</p>
   </div>
 </div>
 </div>
- <div class="clear"></div>
-  </div>
+<div class="clear"></div>
+</div>
 </div>
 <?php
 include("footer.php");

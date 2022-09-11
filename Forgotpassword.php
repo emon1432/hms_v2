@@ -5,7 +5,8 @@ include("header.php");
 <div class="wrapper col2">
   <div id="breadcrumb">
     <ul>
-      <li class="first">Add New Forgot Password</li></ul>
+      <li class="first">Add New Forgot Password</li>
+    </ul>
   </div>
 </div>
 <div class="wrapper col4">
@@ -26,8 +27,8 @@ include("header.php");
   </div>
 </div>
 </div>
- <div class="clear"></div>
-  </div>
+<div class="clear"></div>
+</div>
 </div>
 <?php
 include("footer.php");

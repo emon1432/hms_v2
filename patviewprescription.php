@@ -2,14 +2,12 @@
 
 
 include("dbconnection.php");
-if(isset($_GET[delid]))
-{
-	$sql ="DELETE FROM prescription WHERE prescriptionid='$_GET[delid]'";
-	$qsql=mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
-		echo "<script>alert('prescription deleted successfully..');</script>";
-	}
+if (isset($_GET['delid'])) {
+  $sql = "DELETE FROM prescription WHERE prescriptionid='$_GET[delid]'";
+  $qsql = mysqli_query($con, $sql);
+  if (mysqli_affected_rows($con) == 1) {
+    echo "<script>alert('prescription deleted successfully..');</script>";
+  }
 }
 ?>
 
@@ -20,34 +18,33 @@ if(isset($_GET[delid]))
   </div>
 
 
-    <?php
-          $sql ="SELECT * FROM prescription where patientid='$_SESSION[patientid]'";
-          $qsql = mysqli_query($con,$sql);
-          while($rs = mysqli_fetch_array($qsql))
-          {
-            $sqlpatient = "SELECT * FROM patient WHERE patientid='$rs[patientid]'";
-            $qsqlpatient = mysqli_query($con,$sqlpatient);
-            $rspatient = mysqli_fetch_array($qsqlpatient);
+  <?php
+  $sql = "SELECT * FROM prescription where patientid='$_SESSION[patientid]'";
+  $qsql = mysqli_query($con, $sql);
+  while ($rs = mysqli_fetch_array($qsql)) {
+    $sqlpatient = "SELECT * FROM patient WHERE patientid='$rs[patientid]'";
+    $qsqlpatient = mysqli_query($con, $sqlpatient);
+    $rspatient = mysqli_fetch_array($qsqlpatient);
 
-            $sqldoctor = "SELECT * FROM doctor WHERE doctorid='$rs[doctorid]'";
-            $qsqldoctor = mysqli_query($con,$sqldoctor);
-            $rsdoctor = mysqli_fetch_array($qsqldoctor);
-            ?>
+    $sqldoctor = "SELECT * FROM doctor WHERE doctorid='$rs[doctorid]'";
+    $qsqldoctor = mysqli_query($con, $sqldoctor);
+    $rsdoctor = mysqli_fetch_array($qsqldoctor);
+  ?>
     <div class="card" style="padding: 10px">
 
-  <section class="container">
-    <table class="table table-bordered table-striped table-hover ">
+      <section class="container">
+        <table class="table table-bordered table-striped table-hover ">
 
-        <thead>
-           <tr>
+          <thead>
+            <tr>
               <td><strong>Doctor</strong></td>
               <td><strong>Patient</strong></td>
               <td><strong>Prescription Date</strong></td>
               <td><strong>Status</strong></td>
             </tr>
-        </thead>
-        <tbody>
-          
+          </thead>
+          <tbody>
+
 
             <?php
             echo "<tr>
@@ -61,11 +58,11 @@ if(isset($_GET[delid]))
             ?>
           </tbody>
         </table>
-        
-        
+
+
         <table class="table table-hover table-bordered table-striped">
           <thead>
-             <tr>
+            <tr>
               <td>Medicine</td>
               <td>Cost</td>
               <td>Unit</td>
@@ -73,12 +70,11 @@ if(isset($_GET[delid]))
             </tr>
           </thead>
           <tbody>
-           
+
             <?php
-            $sqlprescription_records ="SELECT * FROM prescription_records LEFT JOIN medicine ON prescription_records.medicine_name=medicine.medicineid WHERE prescription_records.prescription_id='$rs[0]'";
-            $qsqlprescription_records = mysqli_query($con,$sqlprescription_records);
-            while($rsprescription_records = mysqli_fetch_array($qsqlprescription_records))
-            {
+            $sqlprescription_records = "SELECT * FROM prescription_records LEFT JOIN medicine ON prescription_records.medicine_name=medicine.medicineid WHERE prescription_records.prescription_id='$rs[0]'";
+            $qsqlprescription_records = mysqli_query($con, $sqlprescription_records);
+            while ($rsprescription_records = mysqli_fetch_array($qsqlprescription_records)) {
               echo "<tr>
               <td>&nbsp;$rsprescription_records[medicinename]</td>
               <td>&nbsp;$rsprescription_records[cost]</td>
@@ -88,16 +84,16 @@ if(isset($_GET[delid]))
               </tr>";
             }
             ?>
-            
+
           </tbody>
         </table>
-        <input type="submit" class="btn btn-lg" name="print" id="print" value="Print" onclick="myFunction()"/>
-      </div>    
-      
-      <?php
-    }
-    ?>        <p>&nbsp;</p>
-  </div>
+        <input type="submit" class="btn btn-lg" name="print" id="print" value="Print" onclick="myFunction()" />
+    </div>
+
+  <?php
+  }
+  ?> <p>&nbsp;</p>
+</div>
 </div>
 </div>
 <div class="clear"></div>
@@ -107,8 +103,7 @@ if(isset($_GET[delid]))
 include("adfooter.php");
 ?>
 <script>
-  function myFunction()
-  {
-   window.print();
- }
+  function myFunction() {
+    window.print();
+  }
 </script>

@@ -75,8 +75,8 @@ $tim = date("H:i:s");
               info@hmsphp.com</p>
           </li>
           <li> <i class="fa fa-map-marker"></i>
-            <p>1942 Poe Lane<br>
-              Kansas City</p>
+            <p>1209 Dhanmondi<br>
+              Dhaka</p>
           </li>
         </ul>
       </div>
@@ -101,9 +101,11 @@ $tim = date("H:i:s");
                 <li><a href="adminlogin.php">Admin</a></li>
                 <li><a href="doctorlogin.php">Doctor</a></li>
                 <li><a href="patientlogin.php">Patient </a></li>
-
               </ul>
             </li>
+            <!--only patient Registration  -->
+            <li><a href="patientregistration.php">Registration </a></li>
+
           </ul>
         </div>
       </div>

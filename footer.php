@@ -16,7 +16,7 @@
         <div class="col-sm-5">
           <div class="con-info">
             <h6>Contact Us</h6>
-            <p>1942 Poe Lane, Kansas City</p>
+            <p>1209 Dhanmondi, Dhaka</p>
             <ul>
               <li class="mobile">
                 <p>1010 2020 36360</p>
@@ -36,7 +36,7 @@
   <!-- Rights -->
   <div class="rights style-2">
     <div class="container">
-      <p>© <?php echo date("Y"); ?> Hospital Management System - Template by M_ADNAN & Application Developed By <span style="color: white">Khyrul Kabir</span></p>
+      <p>© <?php echo date("Y"); ?> Hospital Management System - Designed by <span style="color: white">Priyanka Ghosh</span> & Application Developed By <span style="color: white">Khairul Islam Emon</span></p>
     </div>
   </div>
 

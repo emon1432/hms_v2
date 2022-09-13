@@ -20,7 +20,7 @@
           <div class="tp-caption sfb tp-resizeme" data-x="center" data-hoffset="0" data-y="center" data-voffset="0" data-speed="800" data-start="1200" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 7;  font-size:22px; color:gray; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">Best Hospitality Services in your town</div>
 
           <!-- LAYER NR. 4 -->
-          <div class="tp-caption lfb tp-resizeme scroll" data-x="center" data-hoffset="0" data-y="center" data-voffset="120" data-speed="800" data-start="1300" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" data-scrolloffset="0" style="z-index: 8;"><a href="#." class="btn">Book Now</a> </div>
+          <div class="tp-caption lfb tp-resizeme scroll" data-x="center" data-hoffset="0" data-y="center" data-voffset="120" data-speed="800" data-start="1300" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" data-scrolloffset="0" style="z-index: 8;"><a href="patientappointment.php" class="btn">Appointment</a> </div>
         </li>
 
         <!-- SLIDE  -->
@@ -38,7 +38,7 @@
           <div class="tp-caption sfb tp-resizeme" data-x="left" data-hoffset="400" data-y="center" data-voffset="30" data-speed="800" data-start="1400" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 7; font-size:16px; color:#000; font-weight:500; line-height:26px; max-width: auto; max-height: auto; white-space: nowrap;">Improved diagnostic performance and heightened satisfaction of patients <br> and physicians delight.</div>
 
           <!-- LAYER NR. 4 -->
-          <div class="tp-caption lfb tp-resizeme scroll" data-x="left" data-hoffset="400" data-y="center" data-voffset="140" data-speed="800" data-start="1600" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" data-scrolloffset="0" style="z-index: 8;"><a href="#." class="btn">CONTACT NOW</a> </div>
+          <div class="tp-caption lfb tp-resizeme scroll" data-x="left" data-hoffset="400" data-y="center" data-voffset="140" data-speed="800" data-start="1600" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" data-scrolloffset="0" style="z-index: 8;"><a href="contact.php" class="btn">CONTACT NOW</a> </div>
         </li>
 
         <!-- SLIDE  -->

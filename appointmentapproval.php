@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 		if ($qsql = mysqli_query($con, $sql)) {
 			$roomid = $_POST['select3'];
 			$billtype = "Room Rent";
-			include("insertbillingrecord.php");
+			// include("insertbillingrecord.php");
 			echo "<script>alert('appointment record updated successfully...');</script>";
 			echo "<script>window.location='patientreport.php?patientid=$_GET[patientid]&appointmentid=$_GET[editid]';</script>";
 		} else {

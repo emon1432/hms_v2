@@ -10,7 +10,35 @@ if (isset($_POST['submit'])) {
 			echo mysqli_error($con);
 		}
 	} else {
-		$sql = "INSERT INTO doctor(doctorname,mobileno,departmentid,loginid,password,status,education,experience,consultancy_charge) values('$_POST[doctorname]','$_POST[mobilenumber]','$_POST[select3]','$_POST[loginid]','$_POST[password]','Active','$_POST[education]','$_POST[experience]','$_POST[consultancy_charge]')";
+		if (isset($_FILES['fileToUpload'])) {
+
+			$errors = array();
+			$file_name = $_FILES['fileToUpload']['name'];
+			$file_size = $_FILES['fileToUpload']['size'];
+			$file_tmp = $_FILES['fileToUpload']['tmp_name'];
+			$file_type = $_FILES['fileToUpload']['type'];
+			$exp = explode('.', $file_name);
+			$end = end($exp);
+			$file_ext = strtolower($end);
+			$extensions = array("jpeg", "jpg", "png", "PNG", "JPG", "JPEG");
+
+			if (in_array($file_ext, $extensions) === false) {
+				$errors[] = "This extension file not allowed, Please choose a JPG or PNG file.";
+			}
+			if ($file_size > 2097152) {
+				$errors[] = "File size must be 2mb or lower.";
+			}
+			$img_name = time() . "-" . $file_name;
+
+			$target = "images/doctorImage/" . time() . "-" . $file_name;
+			if (empty($errors) == true) {
+				// echo "<script>alert('{$file_tmp}')</script>";
+				move_uploaded_file($file_tmp, $target);
+			}
+		}
+
+		$sql = "INSERT INTO doctor(doctorname,mobileno,departmentid,loginid,password,status,education,experience,consultancy_charge,image)
+		 values('$_POST[doctorname]','$_POST[mobilenumber]','$_POST[select3]','$_POST[loginid]','$_POST[password]','Active','$_POST[education]','$_POST[experience]','$_POST[consultancy_charge]', '$img_name')";
 		if ($qsql = mysqli_query($con, $sql)) {
 			echo "<script>alert('Doctor record inserted successfully...');</script>";
 		} else {
@@ -34,7 +62,7 @@ if (isset($_GET['editid'])) {
 			<div class="card">
 
 
-				<form method="post" action="" name="frmdoct" onSubmit="return validateform()" style="padding: 10px">
+				<form method="post" action="" name="frmdoct" onSubmit="return validateform()" style="padding: 10px" enctype="multipart/form-data">
 
 					<div class="form-group"><label>Doctor Name</label>
 						<div class="form-line">
@@ -119,6 +147,17 @@ if (isset($_GET['editid'])) {
 								}
 								?>
 							</select>
+						</div>
+					</div>
+					<!-- Image  -->
+					<div class="form-group">
+						<label>Image</label>
+						<div class="form-line">
+						</div>
+					</div>
+					<input type="file" name="fileToUpload" id="image" />
+					<div class="form-group">
+						<div class="form-line">
 						</div>
 					</div>
 					<input class="btn btn-default" type="submit" name="submit" id="submit" value="Submit" />

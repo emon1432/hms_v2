@@ -21,7 +21,8 @@ if (isset($_GET['delid'])) {
 			<table class="table table-bordered table-striped table-hover js-basic-example dataTable">
 				<thead>
 					<tr>
-						<td>Name</td>
+						<td>Image</td>
+						<td>Doctor Name</td>
 						<td>Contact</td>
 						<td>Department</td>
 						<td>LoginID</td>
@@ -43,6 +44,7 @@ if (isset($_GET['delid'])) {
 						$qsqldept = mysqli_query($con, $sqldept);
 						$rsdept = mysqli_fetch_array($qsqldept);
 						echo "<tr>
+					<td><img src='images/doctorImage/$rs[image]' width='50' height='50'></td>
 					<td>&nbsp;$rs[doctorname]</td>
 					<td>&nbsp;$rs[mobileno]</td>
 					<td>&nbsp;$rsdept[departmentname]</td>

@@ -187,14 +187,14 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`doctorid`, `doctorname`, `mobileno`, `departmentid`, `loginid`, `password`, `status`, `education`, `experience`, `consultancy_charge`,`image`) VALUES
-(1, 'Carol Bosworth', '7002225650', 1, 'carol', 'password', 'Active', 'MBBS', 7.0, 7.00, NULL),
-(2, 'Sirena S Rivera', '7023695696', 2, 'rivera', 'password', 'Active', 'DM', 4.0, 400.00, NULL),
-(3, 'Will Williams', '7014545470', 2, 'wiliams', 'password', 'Active', 'DM', 7.0, 500.00, NULL),
-(4, 'Thomas Borkowski', '7025558690', 3, 'thomas', 'password', 'Active', 'MD', 4.0, 155.00, NULL),
-(5, 'Jason Graham', '7854025410', 4, 'jason', 'password', 'Active', 'DM', 5.0, 75.00, NULL),
-(6, 'Viola McRoy', '7410002540', 5, 'viola', 'password', 'Active', 'MD', 8.0, 4200.00, NULL),
-(7, 'Logan Fletcher', '7012569990', 7, 'logan', 'password', 'Active', 'MD', 5.0, 995.00, NULL),
-(8, 'Ben Bernier', '7012225470', 6, 'ben', 'password', 'Active', 'DM', 3.0, 689.00, NULL);
+(1, 'Carol Bosworth', '7002225650', 1, 'carol', 'password', 'Active', 'MBBS', 7.0, 7.00, 'doctor1.jpg'),
+(2, 'Sirena S Rivera', '7023695696', 2, 'rivera', 'password', 'Active', 'DM', 4.0, 400.00, 'doctor2.jpg'),
+(3, 'Will Williams', '7014545470', 2, 'wiliams', 'password', 'Active', 'DM', 7.0, 500.00, 'doctor3.jpg'),
+(4, 'Thomas Borkowski', '7025558690', 3, 'thomas', 'password', 'Active', 'MD', 4.0, 155.00, 'doctor4.jpg'),
+(5, 'Jason Graham', '7854025410', 4, 'jason', 'password', 'Active', 'DM', 5.0, 75.00, 'doctor5.jpg'),
+(6, 'Viola McRoy', '7410002540', 5, 'viola', 'password', 'Active', 'MD', 8.0, 4200.00, 'doctor6.jpg'),
+(7, 'Logan Fletcher', '7012569990', 7, 'logan', 'password', 'Active', 'MD', 5.0, 995.00, 'doctor1.jpg'),
+(8, 'Ben Bernier', '7012225470', 6, 'ben', 'password', 'Active', 'DM', 3.0, 689.00, 'doctor2.jpg');
 
 -- --------------------------------------------------------
 

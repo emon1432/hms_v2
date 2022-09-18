@@ -93,7 +93,7 @@ $tim = date("H:i:s");
         <div class="collapse navbar-collapse navbar-right" id="nav-open-btn">
           <ul class="nav">
             <li> <a href="index.php">Home </a></li>
-            <li><a href="about.php">About</a></li>
+            <li><a href="about.php">Our Doctors</a></li>
             <li><a href="patientappointment.php">Appointment </a></li>
             <li><a href="contact.php">Contact </a></li>
             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In </a>

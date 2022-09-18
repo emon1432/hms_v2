@@ -32,7 +32,7 @@ if (isset($_SESSION['adminid'])) {
 ?>
 <div class="container-fluid">
     <div class="block-header">
-        <h2 class="text-center"> Change Admin Profile</h2>
+        <h2 class="text-center"> Change Assistant Profile</h2>
     </div>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -102,11 +102,11 @@ include("adfooter.php");
 
     function validateform() {
         if (document.frmadminprofile.adminname.value == "") {
-            alert("Admin name should not be empty..");
+            alert("Assistant name should not be empty..");
             document.frmadminprofile.adminname.focus();
             return false;
         } else if (!document.frmadminprofile.adminname.value.match(alphaspaceExp)) {
-            alert("Admin name not valid..");
+            alert("Assistant name not valid..");
             document.frmadminprofile.adminname.focus();
             return false;
         } else if (document.frmadminprofile.loginid.value == "") {

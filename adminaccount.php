@@ -16,7 +16,7 @@ if (!isset($_SESSION['adminid'])) {
 <div class="container-fluid">
     <div class="block-header">
         <h2>Dashboard</h2>
-        <small class="text-muted">Welcome to Admin Panel</small>
+        <small class="text-muted">Welcome to Assistant Panel</small>
     </div>
 
     <div class="row clearfix">

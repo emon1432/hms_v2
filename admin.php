@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
 		$sql = "UPDATE admin SET adminname='$_POST[adminname]',loginid='$_POST[loginid]',password='$_POST[password]',status='$_POST[select]' WHERE adminid='$_GET[editid]'";
 		if ($qsql = mysqli_query($con, $sql)) {
 			echo "<div class='alert alert-success'>
-			Admin Record updated successfully
+			Assistant Record updated successfully
 			</div>";
 		} else {
 			echo mysqli_error($con);
@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 		$sql = "INSERT INTO admin(adminname,loginid,password,status) values('$_POST[adminname]','$_POST[loginid]','$_POST[password]','$_POST[select]')";
 		if ($qsql = mysqli_query($con, $sql)) {
 			echo "<div class='alert alert-success'>
-			Admin Record Inserted successfully
+			Assistant Record Inserted successfully
 			</div>";
 		} else {
 			echo mysqli_error($con);
@@ -31,7 +31,7 @@ if (isset($_GET['editid'])) {
 
 <div class="container-fluid">
 	<div class="block-header">
-		<h2 class="text-center"> Add New Admin </h2>
+		<h2 class="text-center"> Add New Assistant </h2>
 	</div>
 	<div class="row clearfix">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -44,7 +44,7 @@ if (isset($_GET['editid'])) {
 						<div class="row clearfix">
 							<div class="col-sm-12">
 								<div class="form-group">
-									<label> Admin Name</label>
+									<label> Assistant Name</label>
 									<div class="form-line">
 										<input type="text" class="form-control" name="adminname" id="adminname" value="<?php echo $rsedit['adminname']; ?>" />
 									</div>
@@ -56,7 +56,7 @@ if (isset($_GET['editid'])) {
 						<div class="row clearfix">
 							<div class="col-sm-12">
 								<div class="form-group">
-									<label>Admin Log in Id</label>
+									<label>Assistant Log in Id</label>
 									<div class="form-line">
 										<input type="text" class="form-control" name="loginid" id="loginid" value="<?php echo $rsedit['loginid']; ?>" />
 									</div>
@@ -66,7 +66,7 @@ if (isset($_GET['editid'])) {
 						<div class="row clearfix">
 							<div class="col-sm-12">
 								<div class="form-group">
-									<label> Admin Password</label>
+									<label> Assistant Password</label>
 									<div class="form-line">
 										<input type="password" class="form-control" name="password" id="password" value="<?php echo $rsedit['password']; ?>" />
 									</div>
@@ -76,7 +76,7 @@ if (isset($_GET['editid'])) {
 						<div class="row clearfix">
 							<div class="col-sm-12">
 								<div class="form-group">
-									<label>Confirm Admin Password</label>
+									<label>Confirm Assistant Password</label>
 									<div class="form-line">
 										<input type="password" class="form-control" name="cnfirmpassword" id="cnfirmpassword" value="<?php echo $rsedit['confirmpassword']; ?>" />
 									</div>
@@ -130,11 +130,11 @@ include("adfooter.php");
 
 	function validateform() {
 		if (document.frmadmin.adminname.value == "") {
-			alert("Admin name should not be empty..");
+			alert("Assistant name should not be empty..");
 			document.frmadmin.adminname.focus();
 			return false;
 		} else if (!document.frmadmin.adminname.value.match(alphaspaceExp)) {
-			alert("Admin name not valid..");
+			alert("Assistant name not valid..");
 			document.frmadmin.adminname.focus();
 			return false;
 		} else if (document.frmadmin.loginid.value == "") {

@@ -11,7 +11,7 @@ $tim = date("H:i:s");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>HMS - Admin</title>
+    <title>HMS - Assistant</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@ $tim = date("H:i:s");
             <?php
             if (isset($_SESSION['adminid'])) {
             ?>
-                <!--Admin Menu -->
+                <!--Assistant Menu -->
                 <div class="menu">
                     <ul class="list" style="overflow: hidden; width: auto; height: calc(-184px + 100vh);">
                         <li class="header">MAIN NAVIGATION</li>
@@ -78,10 +78,10 @@ $tim = date("H:i:s");
 
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Profile</span> </a>
                             <ul class="ml-menu">
-                                <li><a href="adminprofile.php">Admin Profile</a></li>
+                                <li><a href="adminprofile.php">Assistant Profile</a></li>
                                 <li><a href="adminchangepassword.php">Change Password</a></li>
-                                <li><a href="admin.php">Add Admin</a></li>
-                                <li><a href="viewadmin.php">View Admin</a></li>
+                                <li><a href="admin.php">Add Assistant</a></li>
+                                <li><a href="viewadmin.php">View Assistant</a></li>
                             </ul>
                         </li>
 
@@ -126,7 +126,7 @@ $tim = date("H:i:s");
 
                     </ul>
                 </div>
-                <!-- Admin Menu -->
+                <!-- Assistant Menu -->
             <?php } ?>
 
 

@@ -204,9 +204,9 @@ if (isset($_SESSION['adminid'])) {
         <li>
             <a href=" ######### ">Profile</a>
             <ul>
-                <li><a href="adminprofile.php">Admin Profile</a></li>
+                <li><a href="adminprofile.php">Assistant Profile</a></li>
                 <li><a href="adminchangepassword.php">Change Password</a></li>
-                <li><a href="admin.php" style="width:150px;">Add Admin</a></li>
+                <li><a href="admin.php" style="width:150px;">Add Assistant</a></li>
             </ul>
         </li>
         <li><a href=" ######### ">Patient</a>

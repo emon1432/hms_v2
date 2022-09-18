@@ -71,7 +71,7 @@ $tim = date("H:i:s");
             <?php
             if (isset($_SESSION['adminid'])) {
             ?>
-                <!--Admin Menu -->
+                <!--Assistant Menu -->
                 <div class="menu">
                     <ul class="list">
                         <li class="header">MAIN NAVIGATION</li>
@@ -80,10 +80,10 @@ $tim = date("H:i:s");
 
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Profile</span> </a>
                             <ul class="ml-menu">
-                                <li><a href="adminprofile.php">Admin Profile</a></li>
+                                <li><a href="adminprofile.php">Assistant Profile</a></li>
                                 <li><a href="adminchangepassword.php">Change Password</a></li>
-                                <li><a href="admin.php">Add Admin</a></li>
-                                <li><a href="viewadmin.php">View Admin</a></li>
+                                <li><a href="admin.php">Add Assistant</a></li>
+                                <li><a href="viewadmin.php">View Assistant</a></li>
                             </ul>
                         </li>
 
@@ -125,7 +125,7 @@ $tim = date("H:i:s");
 
                     </ul>
                 </div>
-                <!-- Admin Menu -->
+                <!-- Assistant Menu -->
             <?php } ?>
 
 

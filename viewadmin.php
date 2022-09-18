@@ -12,7 +12,7 @@ if (isset($_GET['delid'])) {
 
 <div class="container-fluid">
   <div class="block-header">
-    <h2 class="text-center"> View Admin </h2>
+    <h2 class="text-center"> View Assistant </h2>
   </div>
 </div>
 <div class="card">
@@ -21,7 +21,7 @@ if (isset($_GET['delid'])) {
 
       <thead>
         <tr>
-          <td width="12%" height="40">Admin Name</td>
+          <td width="12%" height="40">Assistant Name</td>
           <td width="11%">Login ID</td>
           <td width="12%">Status</td>
           <td width="10%">Action</td>
